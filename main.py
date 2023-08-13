@@ -16,7 +16,7 @@ output = [
     {
         'title': soup.find('h2').text if soup.find('h2') else 'Not found',
         'date': div.find('span').text if (div := soup.find('div', {'class': 'imgTitle'})) and (
-            date := div.find('span')) else 'Not found',
+            div.find('span')) else 'Not found',
         'text': soup.find('div', {'class': 'pageDescription'}).text if
         soup.find('div', {'class': 'pageDescription'}) else 'Not found'
     }
